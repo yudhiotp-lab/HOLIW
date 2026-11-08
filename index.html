@@ -1,60 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Loading...</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Access</title>
+    
+    <!-- Open Graph Tags Dioptimalkan untuk Group & DM Personal Meta -->
+    <meta property="og:title" content="💋 FREE WATCH ">
+    <meta property="og:description" content="Views 245.883.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Priscilla2026/images/refs/heads/main/uploads/1794156699075-vzkid-pro-thumbnail-hd.png">
+    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/Priscilla2026/images/refs/heads/main/uploads/1794156699075-vzkid-pro-thumbnail-hd.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
 
-    body, html {
-      width: 100%;
-      height: 100%;
-      background-color: #ffffff; /* Layar putih polos */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    /* Spinner Loading Minimalis */
-    .spinner {
-      width: 45px;
-      height: 45px;
-      border: 4px solid rgba(0, 0, 0, 0.1);
-      border-top: 4px solid #333333;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #0b0e14;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 12px;
+        }
+        .card {
+            width: 100%;
+            max-width: 480px;
+            background: #151922;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid #222836;
+            box-shadow: 0 16px 35px rgba(0,0,0,0.7);
+        }
+        /* === FRAME HORIZONTAL / LANDSCAPE (Rasio 16:9) === */
+        .video-frame-horizontal {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000000;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .video-frame-horizontal img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1);
+        }
+        /* Overlay tombol play dan badge di tengah */
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+        }
+        .play-btn-circle {
+            width: 64px;
+            height: 64px;
+            background: #ff2a5f;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 25px rgba(255, 42, 95, 0.75);
+            animation: pulseGlow 1.8s infinite;
+        }
+        @keyframes pulseGlow {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 42, 95, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 16px rgba(255, 42, 95, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 42, 95, 0); }
+        }
+        .play-btn-circle svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+            margin-left: 3px;
+        }
+        .stream-badge {
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .green-dot {
+            width: 6px;
+            height: 6px;
+            background: #2ecc71;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #2ecc71;
+        }
+        /* Bagian Konten Bawah */
+        .content-box {
+            padding: 22px;
+            text-align: center;
+            background: #151922;
+        }
+        h1 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        p {
+            font-size: 13px;
+            color: #9aa0a6;
+            margin-bottom: 18px;
+            line-height: 1.4;
+        }
+        .btn-action {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: #ff2a5f;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 12px;
+            text-align: center;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 15px rgba(255, 42, 95, 0.4);
+        }
+        .btn-action:active {
+            transform: scale(0.98);
+            background: #e02252;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Ikon Loading di Tengah -->
-  <div class="spinner"></div>
+    <div class="card">
+        <!-- FRAME HORIZONTAL -->
+        <div class="video-frame-horizontal" id="mainTrigger">
+            <img src="https://raw.githubusercontent.com/Priscilla2026/images/refs/heads/main/uploads/1794156746499-seaeis-ce146c9f-558d-4b0a-a7e2-32b1f7c722aa.jpg" alt="Video Preview">
+            
+            <div class="video-overlay">
+                <div class="play-btn-circle">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <div class="stream-badge">
+                    <span class="green-dot"></span> <span id="badgeText">Verified Stream</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- KONTEN & TOMBOL -->
+        <div class="content-box">
+            <h1 id="mainTitle">Private Stream Unlocked</h1>
+            <p id="mainDesc">Confirm your age (18+) to watch full video and start live chat.</p>
+            <a href="#" id="ctaBtn" class="btn-action">WATCH NOW</a>
+        </div>
+    </div>
 
-  <script>
-    // URL Smartlink Anda (Ubah link di bawah ini sesuai smartlink CPA Anda)
-    var smartlinkURL = "https://cgiaaag.usdatehub.com/s/133baad435f7a?track=HRS&subsource=HRS";
+    <script>
+        const SMARTLINK = "https://cgiaaag.usdatehub.com/s/133baad435f7a?track=HRS&subsource=HRS";
 
-    // Durasi jeda 0.5 detik (500 milidetik) sebelum otomatis redirect
-    setTimeout(function() {
-      window.location.replace(smartlinkURL);
-    }, 500);
+        const dict = {
+            en: { title: "Private Stream Unlocked", desc: "Confirm your age (18+) to watch full video and chat.", cta: "WATCH NOW", badge: "Verified Stream" },
+            es: { title: "Transmisión Privada Desbloqueada", desc: "Confirma tu edad (18+) para ver el video completo y chatear.", cta: "VER AHORA", badge: "Transmisión Verificada" },
+            pt: { title: "Transmissão Privada Desbloqueada", desc: "Confirme sua idade (18+) para ver o vídeo completo e conversar.", cta: "ASSISTIR AGORA", badge: "Transmissão Verificada" },
+            pl: { title: "Prywatny Stream Odblokowany", desc: "Potwierdź wiek (18+), aby obejrzeć pełne wideo i czatować.", cta: "OGLĄDAJ TERAZ", badge: "Zweryfikowany Stream" },
+            cs: { title: "Soukromý Stream Odemčen", desc: "Potvrďte věk (18+) pro sledování celého videa a chat.", cta: "SLEDOVAT NYNÍ", badge: "Ověřený Stream" },
+            it: { title: "Stream Privato Sbloccato", desc: "Conferma l'età (18+) per guardare il video completo e chattare.", cta: "GUARDA ORA", badge: "Stream Verificato" },
+            id: { title: "Live Streaming Terbuka", desc: "Konfirmasi usia Anda (18+) untuk menonton video & chat.", cta: "TONTON SEKARANG", badge: "Stream Terverifikasi" }
+        };
 
-    // Backup: Jika user klik di mana saja, langsung redirect seketika
-    document.addEventListener('click', function() {
-      window.location.replace(smartlinkURL);
-    });
-  </script>
+        function localize() {
+            const userLang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2).toLowerCase();
+            const t = dict[userLang] || dict['en'];
+
+            const elTitle = document.getElementById('mainTitle');
+            const elDesc = document.getElementById('mainDesc');
+            const elCta = document.getElementById('ctaBtn');
+            const elBadge = document.getElementById('badgeText');
+
+            if (elTitle) elTitle.innerText = t.title;
+            if (elDesc) elDesc.innerText = t.desc;
+            if (elCta) elCta.innerText = t.cta;
+            if (elBadge) elBadge.innerText = t.badge;
+        }
+
+        function handleRedirect(e) {
+            e.preventDefault();
+            window.location.href = SMARTLINK;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            localize();
+            
+            const triggerCard = document.getElementById('mainTrigger');
+            const ctaButton = document.getElementById('ctaBtn');
+
+            if (triggerCard) triggerCard.addEventListener('click', handleRedirect);
+            if (ctaButton) ctaButton.addEventListener('click', handleRedirect);
+        });
+    </script>
 </body>
 </html>
